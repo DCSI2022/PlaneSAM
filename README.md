@@ -15,7 +15,7 @@ with primarily the simpler branch learning D-band features and primarily the
 more complex branch learning RGB-band features. Consequently, the backbone
 can effectively learn D-band feature representations even when D-band training
 data is limited in scale, retain the powerful RGB-band feature representations of
-EfficientSAM, and allow the original backbone branch to be fine-tuned for the current task. To enhance the adaptability of our PlaneSAM to the RGB-D domain,
+EfficientSAM, and allow the original backbone branch to be fine-tuned for the current task. To enhance the adaptability of our PlaneSAM to the RGB-D domain,
 we pretrain our dual-complexity backbone using the segment anything task on
 large-scale RGB-D data through a self-supervised pretraining strategy based on
 imperfect pseudo-labels. To support the segmentation of large planes, we optimize
