@@ -23,7 +23,7 @@ the loss function combination ratio of EfficientSAM. In addition, Faster R-CNN i
 used as a plane detector, and its predicted bounding boxes are fed into our dualcomplexity network as prompts, thereby enabling fully automatic plane instance
 segmentation. Experimental results show that the proposed PlaneSAM sets a new
 state-of-the-art (SOTA) performance on the ScanNet dataset, and outperforms
-previous SOTA approaches in zero-shot transfer on the 2D-3D-S, Matterport3D,and ICL-NUIM RGB-D datasets, while only incurring a 10% increase in computational overhead compared to EfficientSAM. Our code and trained model will be
+previous SOTA approaches in zero-shot transfer on the 2D-3D-S, Matterport3D,and ICL-NUIM RGB-D datasets, while only incurring a 10% increase in computational overhead compared to EfficientSAM. Our code and trained model will be
 released publicly.
 
 </p>
