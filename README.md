@@ -4,35 +4,28 @@ This is the official PyTorch implementation for our paper "PlaneSAM: Multimodal 
 
 
 ## 🔭 Introduction
+<strong>Abstract:</strong> Plane instance segmentation from RGB-D data is a crucial research topic for
+many downstream tasks, such as indoor 3D reconstruction. However, most existing deep-learning-based methods utilize only information within the RGB bands,
+neglecting the important role of the depth band in plane instance segmentation.
+Based on EfficientSAM, a fast version of the Segment Anything Model (SAM),
+we propose a plane instance segmentation network called PlaneSAM, which can
+fully integrate the information of the RGB bands (spectral bands) and the D band
+(geometric band), thereby improving the effectiveness of plane instance segmentation in a multimodal manner. Specifically, we use a dual-complexity backbone,
+with primarily the simpler branch learning D-band features and primarily the
+more complex branch learning RGB-band features. Consequently, the backbone
+can effectively learn D-band feature representations even when D-band training
+data is limited in scale, retain the powerful RGB-band feature representations of
+EfficientSAM, and allow the original backbone branch to be fine-tuned for the current task. To enhance the adaptability of our PlaneSAM to the RGB-D domain,
+we pretrain our dual-complexity backbone using the segment anything task on
+large-scale RGB-D data through a self-supervised pretraining strategy based on
+imperfect pseudo-labels. To support the segmentation of large planes, we optimize
+the loss function combination ratio of EfficientSAM. In addition, Faster R-CNN is
+used as a plane detector, and its predicted bounding boxes are fed into our dualcomplexity network as prompts, thereby enabling fully automatic plane instance
+segmentation. Experimental results show that the proposed PlaneSAM sets a new
+state-of-the-art (SOTA) performance on the ScanNet dataset, and outperforms
+previous SOTA approaches in zero-shot transfer on the 2D-3D-S, Matterport3D,and ICL-NUIM RGB-D datasets, while only incurring a 10% increase in computational overhead compared to EfficientSAM. Our code and trained model will be
+released publicly.
 
-<p align="center">
-  <img src="pic/overview.png" alt="Network" width="80%">
-</p>
-<p align="justify">
-<strong>Abstract:</strong> As an effective complement to common laser scanning systems, the portable laser scanning system can acquire
-point clouds flexibly and quickly. Calibration between Light detection and ranging (LiDAR) sensors and inertial
-measurement units (IMU) is the prerequisite for laser scanning systems to obtain high-quality point clouds.
-Related methods have been proposed in the last two decades, where the global navigation satellite system (GNSS)
-or high-precision calibration fields are commonly used. However, the extrinsic self-calibration of LiDAR-IMU is
-challenging, due to the large distortion in single-frame point cloud caused by rapid motion and the position
-errors of IMU integration which drift quickly. At the same time, the highly dynamic motion patterns of portable
-devices and the changes in the scanned scene structure are not well considered in existing LiDAR odometry
-methods. To take better advantage of the characteristics of non-repetitive scanning LiDAR sensor, this paper
-proposes AFLI-Calib, which utilizes adaptive frame length LiDAR odometry to perform the extrinsic self-calibration
-of LiDAR-IMU. <strong>Unlike LiDAR odometry methods with a fixed frame length, the LiDAR frame
-length is dynamically adjusted according to the motion state of sensors and the matching stability of scenes. </strong>The
-single-frame point cloud is registered to the map through a linear-based continuous-time model, eliminating the
-motion distortion correction in advance. For further optimization of trajectory and extrinsic parameters, IMU raw
-measurements and LiDAR observations are involved in the multi-constraint optimization, through tightly-coupled
-IMU pre-integration constraints, LiDAR point-to-plane constraints, and prior constraints. The method
-is fully validated using self-collected calibration data of indoor and outdoor scenes and different motion modes.
-Experiments show that on the test data, the translation parameter accuracy of the method is 0.041 m, which is
-56.3% higher than the state-of-the-art method. The standard deviation is significantly reduced, with translation
-deviation (0.017 m, 0.024 m, 0.022 m) and rotation deviation (0.17◦, 0.25◦, 0.15◦), which verifies the robustness
-of our method. The average RMSE of distances to the reference point cloud acquired by the terrestrial laser
-scanning system (TLS) is 0.042 m, showing a high accuracy calibration result. Comparative experiments with the
-fixed frame length LiDAR odometry method and classical “correction-then-registration” motion distortion model
-further verify the superiority and effectiveness of the proposed adaptive frame length LiDAR odometry.
 </p>
 
 ## 🔗 Related Works
