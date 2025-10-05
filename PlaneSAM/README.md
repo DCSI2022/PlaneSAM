@@ -1,4 +1,4 @@
-# PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model
+# Multimodal plane instance segmentation with the Segment Anything Model
 
 
 
@@ -30,4 +30,5 @@ To evaluate the plane segmentation capabilities of PlaneSAM, please run the eval
 This code is based on the [EfficientSAM](https://github.com/yformer/EfficientSAM) repository. We would like to acknowledge the authors for their work.
 
 ## Additional Note
+
 Due to the author's current busy schedule, we apologize for the possibly poor code quality. Optimizations will be made in the future. If you encounter any questions or bugs in the code, feel free to ask.
