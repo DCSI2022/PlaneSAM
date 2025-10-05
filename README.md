@@ -1,6 +1,6 @@
 # PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model
 
-This is the official PyTorch implementation for our paper "PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model". The paper has been uploaded to Arxiv (https://arxiv.org/abs/2410.16545) and is currently under review by the journal Automation in Construction.
+This is the official PyTorch implementation for our paper "PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model". This paper has been accepted for publication in Automation in Construction.
 
 
 ## 🔭 Introduction
@@ -25,5 +25,8 @@ segmentation. Experimental results show that the proposed PlaneSAM sets a new
 state-of-the-art (SOTA) performance on the ScanNet dataset, and outperforms
 previous SOTA approaches in zero-shot transfer on the 2D-3D-S, Matterport3D,and ICL-NUIM RGB-D datasets, while only incurring a 10% increase in computational overhead compared to EfficientSAM. Our code and trained model will be
 released publicly.
+
+If you find our work useful for your research, please consider citing our paper.
+Deng, Z., Yang, Z., Chen, C., Zeng, C., Meng, Y., Yang, B., 2025. Multimodal plane instance segmentation with the Segment Anything Model. Automation in Construction 180, 106541.
 
 </p>
