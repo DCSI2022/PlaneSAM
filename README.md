@@ -1,7 +1,9 @@
 # Multimodal plane instance segmentation with the Segment Anything Model
 
 This is the official PyTorch implementation for our paper "Multimodal plane instance segmentation with the Segment Anything Model". This paper has been accepted for publication in Automation in Construction.
+
 You may also learn about our algorithm from the preprint version of our paper on arXiv, titled “PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model” (https://arxiv.org/abs/2410.16545 ). 
+
 However, the version we published in the journal Automation in Construction is more formal and provides a more complete description of the algorithm.
 
 
