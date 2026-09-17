@@ -1,17 +1,36 @@
 # Multimodal plane instance segmentation with the Segment Anything Model
 
-This is the official PyTorch implementation for our paper "Multimodal plane instance segmentation with the Segment Anything Model". This paper has been accepted for publication in Automation in Construction.
+## Getting Start
 
-You may also learn about our algorithm from the preprint version of our paper on arXiv, titled “PlaneSAM: Multimodal Plane Instance Segmentation Using the Segment Anything Model” (https://arxiv.org/abs/2410.16545 ). 
+Build the Pytorch Environment:
 
-However, the version we published in the journal Automation in Construction is more formal and provides a more complete description of the algorithm.
+```bash
+conda create -n PlaneSAM python=3.9.16
+conda activate PlaneSAM
+pip install -r requirements.txt
+```
 
+## Data Preparation
 
-## 🔭 Introduction
-<strong>Abstract:</strong> Plane instance segmentation from RGB-D data is critical for BIM-related tasks. However, existing deep-learning methods rely on only RGB bands, overlooking depth information. To address this, PlaneSAM, a Segment-Anything-Model-based network, is proposed. It fully integrates RGB-D bands using a dual-complexity backbone: a simple branch primarily for the D band and a high-capacity branch mainly for RGB bands. This structure facilitates effective D-band learning with limited data, preserves EfficientSAM's RGB feature representations, and enables task-specific fine-tuning. To improve adaptability to RGB-D domains, a self-supervised pretraining strategy is introduced. EfficientSAM’s loss is also optimized for large-plane segmentation. Additionally, plane detection is performed using Faster R-CNN, enabling fully automatic segmentation. State-of-the-art performance is achieved on multiple datasets, with <10% additional overhead compared to EfficientSAM. The proposed dual-complexity backbone shows strong potential for transferring RGB-based foundation models to RGB+X domains in other scenarios, while the pretraining strategy is promising for other data-scarce tasks.
+We train and test our network using the same plane dataset as [PlaneTR](https://github.com/IceTTTb/PlaneTR3D).
+You can access the dataset from [here](https://pan.baidu.com/s/1-1w5dFULfLbxVrfUd6Gmig?pwd=cyye).
 
-## 🔭 Citation
-If you find our work useful for your research, please consider citing our paper.
-Deng, Z., Yang, Z., Chen, C., Zeng, C., Meng, Y., Yang, B., 2025. Multimodal plane instance segmentation with the Segment Anything Model. Automation in Construction 180, 106541.
+## Training
 
-</p>
+Our training process consists of two steps: 
+
+- First, we pretrain on a large-scale RGB-D dataset. The pretrained weights can be obtained from [here](https://pan.baidu.com/s/1Dw4mrCJliEXC6ZT4BOdsuA?pwd=chnk) and placed in the weights directory. 
+- Second, load the pretrained weights into the network and run the train.py script.The trained weights can be obtained from [here](https://pan.baidu.com/s/1jZcYI9YbD4K9B6HZqLfJ3Q?pwd=1c6p). 
+
+## Evaluation
+
+During the evaluation, we use Faster R-CNN as the plane detector. The trained weights can be obtained from [here](https://pan.baidu.com/s/1sHXdjAry2RIc1xHBQXaB7w?pwd=p1kt) and placed in the weights directory. The unseen test dataset can be obtained from [here](https://pan.baidu.com/s/1BIwpigGtfPMxhAmj3M6E6Q?pwd=t6e2).
+To evaluate the plane segmentation capabilities of PlaneSAM, please run the eval.py script.
+
+## Acknowledgements
+
+This code is based on the [EfficientSAM](https://github.com/yformer/EfficientSAM) repository. We would like to acknowledge the authors for their work.
+
+## Additional Note
+
+Due to the author's current busy schedule, we apologize for the possibly poor code quality. Optimizations will be made in the future. If you encounter any questions or bugs in the code, feel free to ask.
